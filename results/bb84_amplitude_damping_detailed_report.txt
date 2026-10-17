@@ -1,0 +1,57 @@
+================================================================================
+                      BB84 QUANTUM KEY DISTRIBUTION REPORT
+================================================================================
+Simulation Engine           : Qiskit AerSimulator (Quantum Simulation)
+Protocol Specification      : BB84 (Charles Bennett & Gilles Brassard, 1984)
+Quantum Channel State       : Noisy Channel (Amplitude_Damping Noise, p = 0.12)
+--------------------------------------------------------------------------------
+KEY METRICS & PERFORMANCE:
+  • Total Qubits Transmitted: 24
+  • Sifted Key Length       : 11 bits
+  • Sifting Efficiency     : 45.83% (Theoretical Expectation: ~50%)
+  • Sample Verification Size: 2 bits
+  • Sample QBER             : 0.0%
+  • Total Sifted Key QBER   : 9.09%
+  • BB84 Security Threshold : 11.0% (Shor-Preskill Bound)
+  • Channel Security Status : SECURE (QBER <= 11.0% BB84 threshold)
+  • Final Key Length        : 9 bits
+  • Raw Final Key Errors    : 1 bit errors
+  • Raw Keys Identical      : NO (Channel noise introduced bit flips)
+--------------------------------------------------------------------------------
+SHARED FINAL SECRET KEYS:
+  Alice's Key : 000101001
+  Bob's Key   : 000101000
+================================================================================
+
+BIT-BY-BIT TRANSMISSION DETAILS:
+
+---------------------------------------------------------------------------------------------------
+ Qubit | Alice Bit | Alice Basis |  State  | Bob Basis | Bob Result | Basis Match? | Sifted Result 
+---------------------------------------------------------------------------------------------------
+   0   |     0     |      Z      |   |0>   |     X     |     0      |   MISMATCH   | -- (Discard)  
+   1   |     1     |      X      |   |->   |     Z     |     0      |   MISMATCH   | -- (Discard)  
+   2   |     1     |      X      |   |->   |     Z     |     1      |   MISMATCH   | -- (Discard)  
+   3   |     0     |      Z      |   |0>   |     Z     |     0      |  MATCH (OK)  |   0 (Valid)   
+   4   |     0     |      X      |   |+>   |     X     |     0      |  MATCH (OK)  |   0 (Valid)   
+   5   |     1     |      Z      |   |1>   |     X     |     0      |   MISMATCH   | -- (Discard)  
+   6   |     1     |      X      |   |->   |     Z     |     0      |   MISMATCH   | -- (Discard)  
+   7   |     1     |      X      |   |->   |     Z     |     1      |   MISMATCH   | -- (Discard)  
+   8   |     0     |      Z      |   |0>   |     Z     |     0      |  MATCH (OK)  |   0 (Valid)   
+   9   |     0     |      Z      |   |0>   |     X     |     1      |   MISMATCH   | -- (Discard)  
+  10   |     1     |      Z      |   |1>   |     X     |     1      |   MISMATCH   | -- (Discard)  
+  11   |     1     |      Z      |   |1>   |     Z     |     1      |  MATCH (OK)  |   1 (Valid)   
+  12   |     0     |      Z      |   |0>   |     Z     |     0      |  MATCH (OK)  |   0 (Valid)   
+  13   |     0     |      X      |   |+>   |     Z     |     0      |   MISMATCH   | -- (Discard)  
+  14   |     1     |      X      |   |->   |     X     |     1      |  MATCH (OK)  |   1 (Valid)   
+  15   |     0     |      Z      |   |0>   |     Z     |     0      |  MATCH (OK)  |   0 (Valid)   
+  16   |     1     |      X      |   |->   |     Z     |     0      |   MISMATCH   | -- (Discard)  
+  17   |     0     |      X      |   |+>   |     X     |     0      |  MATCH (OK)  |   0 (Valid)   
+  18   |     1     |      X      |   |->   |     X     |     1      |  MATCH (OK)  |   1 (Valid)   
+  19   |     1     |      X      |   |->   |     X     |     1      |  MATCH (OK)  |   1 (Valid)   
+  20   |     1     |      Z      |   |1>   |     X     |     0      |   MISMATCH   | -- (Discard)  
+  21   |     1     |      X      |   |->   |     Z     |     1      |   MISMATCH   | -- (Discard)  
+  22   |     1     |      Z      |   |1>   |     X     |     0      |   MISMATCH   | -- (Discard)  
+  23   |     1     |      Z      |   |1>   |     Z     |     0      |ERROR (NOISE) |   A:1!=B:0    
+---------------------------------------------------------------------------------------------------
+
+================================================================================
